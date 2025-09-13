@@ -39,8 +39,8 @@ export default function Info2() {
         style={{ marginTop: 20, alignItems: "center", paddingHorizontal: 20 }}
       >
         <Image
-          source={require("../assets/images/Shipping.png")}
-          style={{ width: 396, height: 349 }}
+          source={require("../assets/images/workers.png")}
+          style={{ width: 334, height: 228 }}
         />
       </View>
       <View
