@@ -1,7 +1,7 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
 import { useRouter } from "expo-router";
+import { Image, StatusBar, Text, TouchableOpacity, View } from "react-native";
 export default function Info() {
-    const router = useRouter();
+  const router = useRouter();
   return (
     <View
       style={{
@@ -11,6 +11,8 @@ export default function Info() {
         backgroundColor: "#F8F9F8",
       }}
     >
+      <StatusBar hidden={true} />
+
       <View
         style={{
           marginTop: 100,
@@ -29,7 +31,8 @@ export default function Info() {
             color: "#424441",
           }}
         >
-          Experience Proffessional Delivery <Text style={{color:'#439D25'}}>Services</Text>
+          Experience Proffessional Delivery{" "}
+          <Text style={{ color: "#439D25" }}>Services</Text>
         </Text>
       </View>
       <View

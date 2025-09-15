@@ -75,7 +75,7 @@ export default function Home() {
         <TextInput
           style={{
             width: "100%",
-            height: 37,
+            height: 50,
             borderRadius: 27,
             borderWidth: 2,
             paddingHorizontal: 30,
@@ -173,7 +173,9 @@ export default function Home() {
           }}
         >
           <TouchableOpacity style={styles.card}>
-            <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+            <View
+              style={{ flexDirection: "row", justifyContent: "space-between" }}
+            >
               <Text style={{ fontWeight: "700", fontSize: 15 }}>
                 Ready to {"\n"}Ship?
               </Text>
@@ -191,7 +193,9 @@ export default function Home() {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.card}>
-            <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+            <View
+              style={{ flexDirection: "row", justifyContent: "space-between" }}
+            >
               <Text style={{ fontWeight: "700", fontSize: 15 }}>
                 Book a {"\n"}driver
               </Text>
@@ -222,6 +226,56 @@ export default function Home() {
             <Text style={{ fontSize: 11, fontWeight: "400" }}>
               Begin your journey to great business values
             </Text>
+          </View>
+        </View>
+        <Image
+          source={require("../../assets/images/Truck GoPick 1.png")}
+          style={{
+            width: 349,
+            height: 183,
+            marginTop: 20,
+            borderTopLeftRadius: 10,
+            borderTopRightRadius: 12,
+          }}
+        />
+
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            width: 349,
+            height: 71,
+            backgroundColor: "#CDEBC9",
+            padding: 20,
+          }}
+        >
+          <View
+            style={{
+              borderWidth: 0.98,
+              borderColor: "white",
+              width: "100%",
+              flexDirection: "row",
+              padding: 5,
+            }}
+          >
+            <Image
+              source={require("../../assets/images/Futures 1.png")}
+              style={{
+                width: 36.227294921875,
+                height: 36.227294921875,
+                marginLeft: 13,
+              }}
+            />
+
+            <View style={{ marginLeft: 15 }}>
+              <Text style={{ fontSize: 11, fontWeight: "700" }}>
+                Are you a Driver?
+              </Text>
+              <Text style={{ fontSize: 12, fontWeight: "700" }}>
+                Register to drive with Go pickup
+              </Text>
+            </View>
           </View>
         </View>
       </ScrollView>

@@ -9,12 +9,12 @@ export default function TabsLayout() {
           let iconName: React.ComponentProps<typeof Ionicons>["name"] = "home-outline";
 
           if (route.name === "home") iconName = "home-outline";
-          else if (route.name === "search") iconName = "search-outline";
+          else if (route.name === "explore") iconName = "search-outline";
           else if (route.name === "notifications") iconName = "notifications-outline";
           else if (route.name === "profile") iconName = "person-outline";
           else if (route.name === "settings") iconName = "globe-outline";
 
-          return <Ionicons name={iconName} size={30} color={color} />; // ✅ bigger icon
+          return <Ionicons name={iconName} size={25} color={color} />; // ✅ bigger icon
         },
         tabBarActiveTintColor: "#439D25",
         tabBarInactiveTintColor: "gray",
@@ -32,7 +32,7 @@ export default function TabsLayout() {
       })}
     >
       <Tabs.Screen name="home" options={{ title: "Home" }} />
-      <Tabs.Screen name="search" options={{ title: "Search" }} />
+      <Tabs.Screen name="explore" options={{ title: "Explore" }} />
       <Tabs.Screen name="profile" options={{ title: "Profile" }} />
       <Tabs.Screen name="notifications" options={{ title: "Notification" }} />
       <Tabs.Screen name="settings" options={{ title: "Map" }} />

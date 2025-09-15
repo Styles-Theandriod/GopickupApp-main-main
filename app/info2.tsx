@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, StatusBar, Text, TouchableOpacity, View } from "react-native";
 
 export default function Info2() {
   const router = useRouter();
@@ -13,6 +13,8 @@ export default function Info2() {
         backgroundColor: "#F8F9F8",
       }}
     >
+      <StatusBar hidden={true} />
+
       <View
         style={{
           marginTop: 100,
@@ -23,7 +25,7 @@ export default function Info2() {
       >
         <Text
           style={{
-            fontSize: 36,
+            fontSize: 56,
             fontStyle: "normal",
             textAlign: "center",
             fontWeight: "700",

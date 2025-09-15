@@ -2,6 +2,7 @@ import GoogleLogInButton from "@/components/GoogleLogInButton";
 import React from "react";
 import {
   Image,
+  StatusBar,
   StyleSheet,
   Text,
   TextInput,
@@ -12,14 +13,16 @@ import { useRouter } from "expo-router";
 export default function Login() {
   const router = useRouter();
   return (
+    
     <View
-      style={{
-        // justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#F8F9F8",
-        flex: 1,
-      }}
+    style={{
+      // justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#F8F9F8",
+      flex: 1,
+    }}
     >
+    <StatusBar hidden={true} />
       <View style={Styles.centered}>
         <Image
           source={require("../assets/images/GoPickUp Logo.png")}
