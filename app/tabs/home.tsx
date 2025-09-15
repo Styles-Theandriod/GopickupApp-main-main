@@ -3,11 +3,11 @@ import {
   Image,
   ScrollView,
   StatusBar,
+  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
-  StyleSheet
 } from "react-native";
 
 export default function Home() {
@@ -17,6 +17,7 @@ export default function Home() {
   return (
     <View style={{ flex: 1, backgroundColor: "#F8F9F8" }}>
       <StatusBar hidden={true} />
+      {/* Header */}
       <View
         style={{
           flexDirection: "row",
@@ -26,39 +27,28 @@ export default function Home() {
         }}
       >
         <Text style={{ fontSize: 30.91, fontWeight: "bold" }}>Home</Text>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
           <Image
             source={require("../../assets/images/myImage.jpg")}
             style={{
-              width: 24.98576545715332,
-              height: 24.98576545715332,
+              width: 25,
+              height: 25,
               borderRadius: 100,
               marginRight: 20,
             }}
           />
           <View>
             <Text>Azih Monica</Text>
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Text
                 style={{
                   backgroundColor: "#439D25",
                   fontSize: 10,
                   marginRight: 10,
                   textAlign: "center",
-                  paddingLeft: 8,
-                  paddingRight: 8,
+                  paddingHorizontal: 8,
+                  color: "white",
+                  borderRadius: 5,
                 }}
               >
                 User ID
@@ -69,37 +59,39 @@ export default function Home() {
           <Image
             source={require("../../assets/images/Settings.png")}
             style={{
-              width: 20.2533016204834,
-              height: 20.2533016204834,
+              width: 20,
+              height: 20,
               marginLeft: 20,
             }}
           />
         </View>
       </View>
-      <View
-        style={{ width: 366, height: 996, marginHorizontal: 15, marginTop: 20 }}
+
+      {/* ✅ Scrollable content */}
+      <ScrollView
+        style={{ flex: 1, marginHorizontal: 15, marginTop: 20 }}
+        showsVerticalScrollIndicator={false}
       >
         <TextInput
           style={{
-            width: 365,
+            width: "100%",
             height: 37,
             borderRadius: 27,
             borderWidth: 2,
-            paddingTop: 2,
-            paddingRight: 7,
-            paddingLeft: 30,
-            paddingBottom: 2,
+            paddingHorizontal: 30,
             marginTop: 10,
             borderColor: "#439D25",
           }}
           placeholder="Search"
           cursorColor={"#439D25"}
-          placeholderTextColor={"#439D25"}
+          placeholderTextColor={"black"}
         />
+
+        {/* Coal Card */}
         <View
           style={{
             backgroundColor: "#439D250D",
-            width: 365,
+            width: "100%",
             height: 126,
             flexDirection: "row",
             alignItems: "center",
@@ -118,38 +110,36 @@ export default function Home() {
                 justifyContent: "center",
                 width: 84,
                 height: 36,
-                paddingTop: 5,
-                paddingBottom: 5,
-                paddingLeft: 26,
-                paddingRight: 26,
                 marginTop: 10,
               }}
             >
               <Text style={{ color: "white" }}>Buy</Text>
             </TouchableOpacity>
           </View>
-
-          <View>
-            <Image
-              source={require("../../assets/images/Rock.png")}
-              style={{
-                width: 184,
-                height: 111,
-                marginLeft: 20,
-              }}
-            />
-          </View>
+          <Image
+            source={require("../../assets/images/Rock.png")}
+            style={{
+              width: 184,
+              height: 111,
+              marginLeft: 20,
+            }}
+          />
         </View>
+
+        {/* GoMarket Banner */}
         <View style={{ marginTop: 20 }}>
           <Image
             source={require("../../assets/images/GoMarket.png")}
             style={{
-              width: 364,
+              width: "100%",
               height: 101,
+              borderRadius: 10,
             }}
           />
         </View>
-        <View style={{marginTop:20}}>
+
+        {/* Tabs */}
+        <View style={{ marginTop: 20 }}>
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -173,16 +163,73 @@ export default function Home() {
             ))}
           </ScrollView>
         </View>
-      </View>
+
+        {/* Cards Row */}
+        <View
+          style={{
+            flexDirection: "row",
+            marginTop: 30,
+            justifyContent: "space-between",
+          }}
+        >
+          <TouchableOpacity style={styles.card}>
+            <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+              <Text style={{ fontWeight: "700", fontSize: 15 }}>
+                Ready to {"\n"}Ship?
+              </Text>
+              <Image
+                source={require("../../assets/images/Location Logo.png")}
+                style={{ width: 38, height: 38 }}
+              />
+            </View>
+            <Text style={{ marginTop: 10, fontWeight: "700", fontSize: 15 }}>
+              Post a load
+            </Text>
+            <Text style={{ fontWeight: "400", fontSize: 12 }}>
+              Delivery and Pickup{"\n"}anywhere in Nigeria.
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.card}>
+            <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+              <Text style={{ fontWeight: "700", fontSize: 15 }}>
+                Book a {"\n"}driver
+              </Text>
+              <Image
+                source={require("../../assets/images/Van.png")}
+                style={{ width: 38, height: 38 }}
+              />
+            </View>
+            <Text style={{ marginTop: 10, fontWeight: "700", fontSize: 12 }}>
+              Our Dispatch Equipment
+            </Text>
+            <Text style={{ fontWeight: "400", fontSize: 12 }}>
+              Van, Pick Up, Truck, Flat bed, Trailer and Tipper.
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        {/* Register Vendor Card */}
+        <View style={styles.vendorCard}>
+          <Image
+            source={require("../../assets/images/Futures 1.png")}
+            style={{ width: 68.94, height: 62.85, marginRight: 10 }}
+          />
+          <View>
+            <Text style={{ fontSize: 13, fontWeight: "800" }}>
+              Register as a building material vendor.
+            </Text>
+            <Text style={{ fontSize: 11, fontWeight: "400" }}>
+              Begin your journey to great business values
+            </Text>
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
 }
 
-
 const styles = StyleSheet.create({
-  container: {
-    paddingVertical: 10,
-  },
   scrollContainer: {
     paddingHorizontal: 10,
     alignItems: "center",
@@ -196,7 +243,7 @@ const styles = StyleSheet.create({
   },
   selectedButton: {
     borderWidth: 2,
-    borderColor: "#439D25", // highlight border
+    borderColor: "#439D25",
   },
   text: {
     fontSize: 14,
@@ -205,5 +252,28 @@ const styles = StyleSheet.create({
   },
   selectedText: {
     fontWeight: "bold",
+  },
+  card: {
+    backgroundColor: "#439D2517",
+    width: 169,
+    height: 125,
+    padding: 15,
+    borderRadius: 10,
+  },
+  vendorCard: {
+    width: 349,
+    height: 112.85,
+    padding: 20,
+    backgroundColor: "white",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    borderRadius: 12,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 6,
+    elevation: 3,
+    marginTop: 20,
   },
 });
