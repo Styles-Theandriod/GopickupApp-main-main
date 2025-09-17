@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {
   Image,
+  Modal,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -12,6 +13,7 @@ import {
 
 export default function Home() {
   const [selected, setSelected] = useState("Buy Material");
+  const [visible, setVisible] = useState(false);
 
   const tabs = ["Buy Material", "Natural Resources", "Post a Request", "Trade"];
   return (
@@ -116,6 +118,50 @@ export default function Home() {
               <Text style={{ color: "white" }}>Buy</Text>
             </TouchableOpacity>
           </View>
+          {/* Modal Begining */}
+          <Modal
+            visible={visible}
+            transparent
+            animationType="slide"
+            onRequestClose={() => setVisible(false)}
+          >
+            <View
+              style={{
+                flex: 1,
+                backgroundColor: "rgba(0,0,0,0.5)",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <View
+                style={{
+                  width: 300,
+                  padding: 20,
+                  borderRadius: 15,
+                  backgroundColor: "white",
+                  alignItems: "center",
+                }}
+              >
+                <Text
+                  style={{ fontSize: 18, fontWeight: "600", marginBottom: 20 }}
+                >
+                  Hello! I am a Modal 🚀
+                </Text>
+                <TouchableOpacity
+                  onPress={() => setVisible(false)}
+                  style={{
+                    backgroundColor: "#439D25",
+                    padding: 10,
+                    borderRadius: 10,
+                  }}
+                >
+                  <Text style={{ color: "white" }}>Close</Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+          </Modal>
+          {/* Modal End */}
+
           <Image
             source={require("../../assets/images/Rock.png")}
             style={{
